@@ -80,6 +80,32 @@ final class LightStateUseCaseTests: XCTestCase {
         XCTAssert(results.allSatisfy { $0 == expectedResult })
     }
 
+    // One minute row
+
+    func test_oneMinuteRowLight_expectedResult() {
+        checkOneMinuteSatisfy(with: [0, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55],
+                              expectedResult: generateExpectedResult(numberLights: 4, totalLightsOn: 0))
+
+        checkOneMinuteSatisfy(with: [1, 6, 11, 16, 21, 26, 31, 36, 41, 46, 51, 56],
+                              expectedResult: generateExpectedResult(numberLights: 4, totalLightsOn: 1))
+
+        checkOneMinuteSatisfy(with: [2, 7, 12, 17, 22, 27, 32, 37, 42, 47, 52, 57],
+                              expectedResult: generateExpectedResult(numberLights: 4, totalLightsOn: 2))
+
+        checkOneMinuteSatisfy(with: [3, 8, 13, 18, 23, 28, 33, 38, 43, 48, 53, 58],
+                              expectedResult: generateExpectedResult(numberLights: 4, totalLightsOn: 3))
+
+        checkOneMinuteSatisfy(with: [4, 9, 14, 19, 24, 29, 34, 39, 44, 49, 54, 59],
+                              expectedResult: generateExpectedResult(numberLights: 4, totalLightsOn: 4))
+    }
+
+    func checkOneMinuteSatisfy(with minutes: [Int], expectedResult: [Bool]) {
+        let results = minutes.map { useCase.oneMinuteRowStates(from: Date.createWith(minute: $0)) }
+
+        XCTAssert(results.allSatisfy { $0 == expectedResult })
+    }
+
+
     // Utils
 
     func generateExpectedResult(numberLights: Int, totalLightsOn: Int) -> [Bool] {
