@@ -11,7 +11,8 @@ import SwiftUI
 struct BerlinClockTestApp: App {
     var body: some Scene {
         WindowGroup {
-            BerlinClockView()
+            BerlinClockView(borderColor: .black,
+                            borderWidth: 4)
         }
     }
 }
