@@ -23,7 +23,8 @@ public class BerlinClockEngine: BerlinClockEngineProtocol {
         BerlinClock(second: secondLamp(with: date),
                     fiveHours: hourLamps(with: useCase.fiveHoursRowStates(from: date)),
                     hours: hourLamps(with: useCase.oneHourRowStates(from: date)),
-                    fiveMinutes: [],
+                    fiveMinutes: minuteLamps(with: useCase.fiveMinutesRowStates(from: date),
+                                             withVisualMarkAtInterval: 3),
                     minutes: [])
     }
 
@@ -33,5 +34,15 @@ public class BerlinClockEngine: BerlinClockEngineProtocol {
 
     private func hourLamps(with states: [Bool]) -> [Lamp] {
         states.map { $0 ? .red : .off  }
+    }
+
+    private func minuteLamps(with states: [Bool], withVisualMarkAtInterval: Int = 0) -> [Lamp] {
+        states.enumerated().map { (index, element) in
+            guard element else { return .off } // Check first if it is light on
+            guard withVisualMarkAtInterval > 0 else { return .yellow } // Check if we need visualMark logic, if not it's simply yellow
+
+            let tmpIndex = index + 1
+            return tmpIndex % withVisualMarkAtInterval == 0 ? .red : .yellow
+        }
     }
 }
