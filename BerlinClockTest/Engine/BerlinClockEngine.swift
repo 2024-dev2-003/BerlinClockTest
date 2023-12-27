@@ -22,7 +22,7 @@ public class BerlinClockEngine: BerlinClockEngineProtocol {
     public func clock(for date: Date) -> BerlinClock {
         BerlinClock(second: secondLamp(with: date),
                     fiveHours: hourLamps(with: useCase.fiveHoursRowStates(from: date)),
-                    hours: [],
+                    hours: hourLamps(with: useCase.oneHourRowStates(from: date)),
                     fiveMinutes: [],
                     minutes: [])
     }
