@@ -36,8 +36,17 @@ struct BerlinClockView: View {
 
             // 5minutes
 
+            HourMinuteRowView(colors: [.yellow, .yellow, .yellow, .yellow, .yellow, .yellow, .yellow, .yellow, .yellow, .yellow, .yellow],
+                              borderColor: borderColor,
+                              borderWidth: borderWidth)
+            .frame(height: 75)
+
             // minutes
 
+            HourMinuteRowView(colors: [.yellow, .yellow, .yellow, .yellow],
+                              borderColor: borderColor,
+                              borderWidth: borderWidth)
+            .frame(height: 75)
         }
         .padding()
     }
