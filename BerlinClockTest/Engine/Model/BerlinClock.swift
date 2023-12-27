@@ -11,4 +11,5 @@ public struct BerlinClock {
     let hours: [Lamp]
     let fiveMinutes: [Lamp]
     let minutes: [Lamp]
+    let time: String
 }

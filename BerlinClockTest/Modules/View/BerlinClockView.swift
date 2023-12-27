@@ -18,6 +18,7 @@ struct BerlinClockView<T: BerlinClockViewModelProtocol>: View {
     @State private var hoursLamp: [Lamp] = Array(repeating: .off, count: 4)
     @State private var fiveMinutesLamp: [Lamp] = Array(repeating: .off, count: 11)
     @State private var minutesLamp: [Lamp] = Array(repeating: .off, count: 4)
+    @State private var time: String = "--:--"
 
     var body: some View {
         VStack {
@@ -54,6 +55,10 @@ struct BerlinClockView<T: BerlinClockViewModelProtocol>: View {
                               borderColor: borderColor,
                               borderWidth: borderWidth)
             .frame(height: 75)
+
+            // digital clock
+
+            Text(time)
         }
         .padding()
         .onReceive(viewModel.berlinClockPublisher) { berlinClock in
@@ -62,6 +67,7 @@ struct BerlinClockView<T: BerlinClockViewModelProtocol>: View {
             hoursLamp = berlinClock.hours
             fiveMinutesLamp = berlinClock.fiveMinutes
             minutesLamp = berlinClock.minutes
+            time = berlinClock.time
         }
         .onAppear(perform: {
             viewModel.startTimer()

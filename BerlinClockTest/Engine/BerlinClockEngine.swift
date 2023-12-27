@@ -8,6 +8,8 @@
 import Foundation
 
 public protocol BerlinClockEngineProtocol {
+    var clockOff: BerlinClock { get }
+
     func clock(for date: Date) -> BerlinClock
 }
 
@@ -25,8 +27,25 @@ public class BerlinClockEngine: BerlinClockEngineProtocol {
                     hours: hourLamps(with: useCase.oneHourRowStates(from: date)),
                     fiveMinutes: minuteLamps(with: useCase.fiveMinutesRowStates(from: date),
                                              withVisualMarkAtInterval: 3),
-                    minutes: minuteLamps(with: useCase.oneMinuteRowStates(from: date)))
+                    minutes: minuteLamps(with: useCase.oneMinuteRowStates(from: date)),
+                    time: DateFormatter.hoursMinutesSecondsFormatter.string(from: date))
     }
+
+
+    public var clockOff: BerlinClock {
+        let date = Date.createWith(hour: 0,
+                                   minute: 0,
+                                   second: 1)
+
+        return BerlinClock(second: secondLamp(with: date),
+                           fiveHours: hourLamps(with: useCase.fiveHoursRowStates(from: date)),
+                           hours: hourLamps(with: useCase.oneHourRowStates(from: date)),
+                           fiveMinutes: minuteLamps(with: useCase.fiveMinutesRowStates(from: date),
+                                                    withVisualMarkAtInterval: 3),
+                           minutes: minuteLamps(with: useCase.oneMinuteRowStates(from: date)),
+                           time: "--:--")
+    }
+
 
     private func secondLamp(with date: Date) -> Lamp {
         useCase.secondState(from: date) ? .yellow : .off

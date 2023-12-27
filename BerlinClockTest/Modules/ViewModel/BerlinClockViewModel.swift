@@ -30,9 +30,7 @@ public class BerlinClockViewModel: BerlinClockViewModelProtocol {
         self.clockEngine = clockEngine
         self.timerManager = timerManager
 
-        self.berlinClock = clockEngine.clock(for: Date.createWith(hour: 0,
-                                                                  minute: 0,
-                                                                  second: 1))
+        self.berlinClock = clockEngine.clockOff
 
         listenTimer()
     }

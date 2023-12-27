@@ -30,6 +30,7 @@
 		7FFF07702B3CC791005E1A28 /* SecondLampView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FFF076F2B3CC791005E1A28 /* SecondLampView.swift */; };
 		7FFF07722B3CC98D005E1A28 /* HourMinuteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FFF07712B3CC98D005E1A28 /* HourMinuteView.swift */; };
 		7FFF07742B3CC9BB005E1A28 /* HourMinuteRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FFF07732B3CC9BB005E1A28 /* HourMinuteRowView.swift */; };
+		7FFF07762B3CD2CA005E1A28 /* DateFormatter+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FFF07752B3CD2CA005E1A28 /* DateFormatter+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,6 +77,7 @@
 		7FFF076F2B3CC791005E1A28 /* SecondLampView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondLampView.swift; sourceTree = "<group>"; };
 		7FFF07712B3CC98D005E1A28 /* HourMinuteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourMinuteView.swift; sourceTree = "<group>"; };
 		7FFF07732B3CC9BB005E1A28 /* HourMinuteRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourMinuteRowView.swift; sourceTree = "<group>"; };
+		7FFF07752B3CD2CA005E1A28 /* DateFormatter+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateFormatter+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -189,6 +191,7 @@
 			children = (
 				7FFF074A2B3C6960005E1A28 /* Date+Extension.swift */,
 				7FFF074D2B3C6C27005E1A28 /* Calendar+Extension.swift */,
+				7FFF07752B3CD2CA005E1A28 /* DateFormatter+Extension.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -395,6 +398,7 @@
 				7FFF074E2B3C6C27005E1A28 /* Calendar+Extension.swift in Sources */,
 				7FFF07482B3C68FA005E1A28 /* LightStateUseCase.swift in Sources */,
 				7FFF071B2B3C6616005E1A28 /* BerlinClockTestApp.swift in Sources */,
+				7FFF07762B3CD2CA005E1A28 /* DateFormatter+Extension.swift in Sources */,
 				7FFF07562B3C7DDA005E1A28 /* BerlinClockEngine.swift in Sources */,
 				7FFF07722B3CC98D005E1A28 /* HourMinuteView.swift in Sources */,
 				7FFF07602B3CA15E005E1A28 /* Date+Extension.swift in Sources */,
