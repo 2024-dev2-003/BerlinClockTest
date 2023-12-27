@@ -30,5 +30,19 @@ final class BerlinClockEngineTests: XCTestCase {
         XCTAssertFalse(clockEngine.clock(for: Date.createWith(second: 1)).second  == .red)
     }
 
+    // Five hours row
+
+    func test_fiveHoursRowLight_expectedResult() {
+        checkFiveHoursSatisfy(with: 0...4, expectedResult: "OOOO")
+        checkFiveHoursSatisfy(with: 5...9, expectedResult: "ROOO")
+        checkFiveHoursSatisfy(with: 10...14, expectedResult: "RROO")
+        checkFiveHoursSatisfy(with: 15...19, expectedResult: "RRRO")
+        checkFiveHoursSatisfy(with: 20...23, expectedResult: "RRRR")
+    }
+
+    func checkFiveHoursSatisfy(with hours: ClosedRange<Int>, expectedResult: String) {
+        let results = hours.map { clockEngine.clock(for: Date.createWith(hour: $0)).fiveHours.colorsOfTheRow }
+        XCTAssert(results.allSatisfy { $0 == expectedResult })
+    }
 
 }

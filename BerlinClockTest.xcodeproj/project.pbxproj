@@ -21,6 +21,7 @@
 		7FFF07542B3C7DBF005E1A28 /* BerlinClock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FFF07532B3C7DBF005E1A28 /* BerlinClock.swift */; };
 		7FFF07562B3C7DDA005E1A28 /* BerlinClockEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FFF07552B3C7DDA005E1A28 /* BerlinClockEngine.swift */; };
 		7FFF07582B3C7E29005E1A28 /* BerlinClockEngineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FFF07572B3C7E29005E1A28 /* BerlinClockEngineTests.swift */; };
+		7FFF075A2B3C821E005E1A28 /* Array+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FFF07592B3C821E005E1A28 /* Array+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +59,7 @@
 		7FFF07532B3C7DBF005E1A28 /* BerlinClock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BerlinClock.swift; sourceTree = "<group>"; };
 		7FFF07552B3C7DDA005E1A28 /* BerlinClockEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BerlinClockEngine.swift; sourceTree = "<group>"; };
 		7FFF07572B3C7E29005E1A28 /* BerlinClockEngineTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BerlinClockEngineTests.swift; sourceTree = "<group>"; };
+		7FFF07592B3C821E005E1A28 /* Array+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,6 +160,7 @@
 			isa = PBXGroup;
 			children = (
 				7FFF074A2B3C6960005E1A28 /* Date+Extension.swift */,
+				7FFF07592B3C821E005E1A28 /* Array+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -335,6 +338,7 @@
 				7FFF072C2B3C6618005E1A28 /* LightStateUseCaseTests.swift in Sources */,
 				7FFF074B2B3C6960005E1A28 /* Date+Extension.swift in Sources */,
 				7FFF07582B3C7E29005E1A28 /* BerlinClockEngineTests.swift in Sources */,
+				7FFF075A2B3C821E005E1A28 /* Array+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
