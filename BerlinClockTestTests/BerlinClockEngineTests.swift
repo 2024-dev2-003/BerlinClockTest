@@ -84,4 +84,29 @@ final class BerlinClockEngineTests: XCTestCase {
 
         XCTAssert(results.allSatisfy { $0 == expectedResult })
     }
+
+    // 1 minute row
+
+    func test_oneMinuteRowLight_expectedResult() {
+        checkOneMinuteSatisfy(with: [0, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55],
+                              expectedResult: "OOOO")
+
+        checkOneMinuteSatisfy(with: [1, 6, 11, 16, 21, 26, 31, 36, 41, 46, 51, 56],
+                              expectedResult: "YOOO")
+
+        checkOneMinuteSatisfy(with: [2, 7, 12, 17, 22, 27, 32, 37, 42, 47, 52, 57],
+                              expectedResult: "YYOO")
+
+        checkOneMinuteSatisfy(with: [3, 8, 13, 18, 23, 28, 33, 38, 43, 48, 53, 58],
+                              expectedResult: "YYYO")
+
+        checkOneMinuteSatisfy(with: [4, 9, 14, 19, 24, 29, 34, 39, 44, 49, 54, 59],
+                              expectedResult: "YYYY")
+    }
+
+    func checkOneMinuteSatisfy(with minutes: [Int], expectedResult: String) {
+        let results = minutes.map { clockEngine.clock(for: Date.createWith(minute: $0)).minutes.colorsOfTheRow }
+
+        XCTAssert(results.allSatisfy { $0 == expectedResult })
+    }
 }
