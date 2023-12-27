@@ -13,7 +13,9 @@ public protocol LightStateUseCaseProtocol {
 
 public class LightStateUseCase: LightStateUseCaseProtocol {
 
+    private var calendar: Calendar = .init(identifier: .gregorian)
+
     public func secondState(from date: Date) -> Bool {
-        false
+        calendar.seconds(of: date) % 2 == 0
     }
 }
