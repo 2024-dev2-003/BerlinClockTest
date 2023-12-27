@@ -21,7 +21,7 @@ public class BerlinClockEngine: BerlinClockEngineProtocol {
 
     public func clock(for date: Date) -> BerlinClock {
         BerlinClock(second: secondLamp(with: date),
-                    fiveHours: [],
+                    fiveHours: hourLamps(with: useCase.fiveHoursRowStates(from: date)),
                     hours: [],
                     fiveMinutes: [],
                     minutes: [])
@@ -29,5 +29,9 @@ public class BerlinClockEngine: BerlinClockEngineProtocol {
 
     private func secondLamp(with date: Date) -> Lamp {
         useCase.secondState(from: date) ? .yellow : .off
+    }
+
+    private func hourLamps(with states: [Bool]) -> [Lamp] {
+        states.map { $0 ? .red : .off  }
     }
 }
