@@ -27,6 +27,7 @@ struct BerlinClockView<T: BerlinClockViewModelProtocol>: View {
                            borderColor: borderColor,
                            borderWidth: borderWidth)
             .frame(width: 130, height: 130)
+            .accessibilityIdentifier("secondLamp")
 
             // 5hours
 
@@ -34,6 +35,7 @@ struct BerlinClockView<T: BerlinClockViewModelProtocol>: View {
                               borderColor: borderColor,
                               borderWidth: borderWidth)
             .frame(height: 75)
+            .accessibilityIdentifier("fiveHoursRowLamp")
 
             // hour
 
@@ -41,6 +43,7 @@ struct BerlinClockView<T: BerlinClockViewModelProtocol>: View {
                               borderColor: borderColor,
                               borderWidth: borderWidth)
             .frame(height: 75)
+            .accessibilityIdentifier("hoursRowLamp")
 
             // 5minutes
 
@@ -48,6 +51,7 @@ struct BerlinClockView<T: BerlinClockViewModelProtocol>: View {
                               borderColor: borderColor,
                               borderWidth: borderWidth)
             .frame(height: 75)
+            .accessibilityIdentifier("fiveMinutesRowLamp")
 
             // minutes
 
@@ -55,10 +59,12 @@ struct BerlinClockView<T: BerlinClockViewModelProtocol>: View {
                               borderColor: borderColor,
                               borderWidth: borderWidth)
             .frame(height: 75)
+            .accessibilityIdentifier("minutesRowLamp")
 
             // digital clock
 
             Text(time)
+                .accessibilityIdentifier("timeLabel")
         }
         .padding()
         .onReceive(viewModel.berlinClockPublisher) { berlinClock in
