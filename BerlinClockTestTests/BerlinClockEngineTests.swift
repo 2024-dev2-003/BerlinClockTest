@@ -61,4 +61,27 @@ final class BerlinClockEngineTests: XCTestCase {
         let results = hours.map { clockEngine.clock(for: Date.createWith(hour: $0)).hours.colorsOfTheRow }
         XCTAssert(results.allSatisfy { $0 == expectedResult })
     }
+
+    // 5 minutes row
+
+    func test_fiveMinutesRowLight_expectedResult() {
+        checkFiveMinutesSatisfy(with: 0...4, expectedResult: "OOOOOOOOOOO")
+        checkFiveMinutesSatisfy(with: 5...9, expectedResult: "YOOOOOOOOOO")
+        checkFiveMinutesSatisfy(with: 10...14, expectedResult: "YYOOOOOOOOO")
+        checkFiveMinutesSatisfy(with: 15...19, expectedResult: "YYROOOOOOOO")
+        checkFiveMinutesSatisfy(with: 20...24, expectedResult: "YYRYOOOOOOO")
+        checkFiveMinutesSatisfy(with: 25...29, expectedResult: "YYRYYOOOOOO")
+        checkFiveMinutesSatisfy(with: 30...34, expectedResult: "YYRYYROOOOO")
+        checkFiveMinutesSatisfy(with: 35...39, expectedResult: "YYRYYRYOOOO")
+        checkFiveMinutesSatisfy(with: 40...44, expectedResult: "YYRYYRYYOOO")
+        checkFiveMinutesSatisfy(with: 45...49, expectedResult: "YYRYYRYYROO")
+        checkFiveMinutesSatisfy(with: 50...54, expectedResult: "YYRYYRYYRYO")
+        checkFiveMinutesSatisfy(with: 55...59, expectedResult: "YYRYYRYYRYY")
+    }
+
+    func checkFiveMinutesSatisfy(with minutes: ClosedRange<Int>, expectedResult: String) {
+        let results = minutes.map { clockEngine.clock(for: Date.createWith(minute: $0)).fiveMinutes.colorsOfTheRow }
+
+        XCTAssert(results.allSatisfy { $0 == expectedResult })
+    }
 }
