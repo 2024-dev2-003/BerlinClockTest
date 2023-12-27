@@ -13,7 +13,21 @@ public protocol BerlinClockEngineProtocol {
 
 public class BerlinClockEngine: BerlinClockEngineProtocol {
 
+    private let useCase: LightStateUseCaseProtocol
+
+    public init(useCase: LightStateUseCaseProtocol) {
+        self.useCase = useCase
+    }
+
     public func clock(for date: Date) -> BerlinClock {
-        return BerlinClock(second: .off, fiveHours: [], hours: [], fiveMinutes: [], minutes: [])
+        BerlinClock(second: secondLamp(with: date),
+                    fiveHours: [],
+                    hours: [],
+                    fiveMinutes: [],
+                    minutes: [])
+    }
+
+    private func secondLamp(with date: Date) -> Lamp {
+        useCase.secondState(from: date) ? .yellow : .off
     }
 }

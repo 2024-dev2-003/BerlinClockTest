@@ -10,7 +10,7 @@ import XCTest
 
 final class BerlinClockEngineTests: XCTestCase {
 
-    private let clockEngine: BerlinClockEngineProtocol = BerlinClockEngine()
+    private let clockEngine: BerlinClockEngineProtocol = BerlinClockEngine(useCase: LightStateUseCase())
 
     func test_oneSecondLamp_expectedResult() {
 
