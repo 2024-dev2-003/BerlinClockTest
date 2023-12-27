@@ -11,6 +11,7 @@ public protocol LightStateUseCaseProtocol {
     func secondState(from date: Date) -> Bool
     func fiveHoursRowStates(from date: Date) -> [Bool]
     func oneHourRowStates(from date: Date) -> [Bool]
+    func fiveMinutesRowStates(from date: Date) -> [Bool]
 }
 
 public class LightStateUseCase: LightStateUseCaseProtocol {
@@ -27,6 +28,10 @@ public class LightStateUseCase: LightStateUseCaseProtocol {
 
     public func oneHourRowStates(from date: Date) -> [Bool] {
         generateStates(for: 4, isOnTotal: calendar.hours(of: date) % 5)
+    }
+
+    public func fiveMinutesRowStates(from date: Date) -> [Bool] {
+        []
     }
 
     // Utils

@@ -57,6 +57,28 @@ final class LightStateUseCaseTests: XCTestCase {
         XCTAssert(results.allSatisfy { $0 == expectedResult })
     }
 
+    // Five minutes row
+
+    func test_fiveMinutesRowLight_expectedResult() {
+        checkFiveMinutesSatisfy(with: 0...4, expectedResult: generateExpectedResult(numberLights: 11, totalLightsOn: 0))
+        checkFiveMinutesSatisfy(with: 5...9, expectedResult: generateExpectedResult(numberLights: 11, totalLightsOn: 1))
+        checkFiveMinutesSatisfy(with: 10...14, expectedResult: generateExpectedResult(numberLights: 11, totalLightsOn: 2))
+        checkFiveMinutesSatisfy(with: 15...19, expectedResult: generateExpectedResult(numberLights: 11, totalLightsOn: 3))
+        checkFiveMinutesSatisfy(with: 20...24, expectedResult: generateExpectedResult(numberLights: 11, totalLightsOn: 4))
+        checkFiveMinutesSatisfy(with: 25...29, expectedResult: generateExpectedResult(numberLights: 11, totalLightsOn: 5))
+        checkFiveMinutesSatisfy(with: 30...34, expectedResult: generateExpectedResult(numberLights: 11, totalLightsOn: 6))
+        checkFiveMinutesSatisfy(with: 35...39, expectedResult: generateExpectedResult(numberLights: 11, totalLightsOn: 7))
+        checkFiveMinutesSatisfy(with: 40...44, expectedResult: generateExpectedResult(numberLights: 11, totalLightsOn: 8))
+        checkFiveMinutesSatisfy(with: 45...49, expectedResult: generateExpectedResult(numberLights: 11, totalLightsOn: 9))
+        checkFiveMinutesSatisfy(with: 50...54, expectedResult: generateExpectedResult(numberLights: 11, totalLightsOn: 10))
+        checkFiveMinutesSatisfy(with: 55...59, expectedResult: generateExpectedResult(numberLights: 11, totalLightsOn: 11))
+    }
+
+    func checkFiveMinutesSatisfy(with minutes: ClosedRange<Int>, expectedResult: [Bool]) {
+        let results = minutes.map { useCase.fiveMinutesRowStates(from: Date.createWith(minute: $0)) }
+
+        XCTAssert(results.allSatisfy { $0 == expectedResult })
+    }
 
     // Utils
 
