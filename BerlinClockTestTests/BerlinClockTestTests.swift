@@ -42,6 +42,22 @@ final class LightStateUseCaseTests: XCTestCase {
         XCTAssert(results.allSatisfy { $0 == expectedResult })
     }
 
+    // One hour row
+
+    func test_oneHourRowLight_expectedResult() {
+        checkOneHourSatisfy(with: [0, 5, 10, 15, 20], expectedResult: generateExpectedResult(numberLights: 4, totalLightsOn: 0))
+        checkOneHourSatisfy(with: [1, 6, 11, 16, 21], expectedResult: generateExpectedResult(numberLights: 4, totalLightsOn: 1))
+        checkOneHourSatisfy(with: [2, 7, 12, 17, 22], expectedResult: generateExpectedResult(numberLights: 4, totalLightsOn: 2))
+        checkOneHourSatisfy(with: [3, 8, 13, 18, 23], expectedResult: generateExpectedResult(numberLights: 4, totalLightsOn: 3))
+        checkOneHourSatisfy(with: [4, 9, 14, 19], expectedResult: generateExpectedResult(numberLights: 4, totalLightsOn: 4))
+    }
+
+    func checkOneHourSatisfy(with hours: [Int], expectedResult: [Bool]) {
+        let results = hours.map { useCase.oneHourRowStates(from: Date.createWith(hour: $0)) }
+        XCTAssert(results.allSatisfy { $0 == expectedResult })
+    }
+
+
     // Utils
 
     func generateExpectedResult(numberLights: Int, totalLightsOn: Int) -> [Bool] {
