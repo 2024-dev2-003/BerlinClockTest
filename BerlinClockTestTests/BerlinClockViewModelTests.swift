@@ -18,7 +18,7 @@ final class BerlinClockViewModelTests: XCTestCase {
 
     override func setUp() {
         super.setUp()
-        self.timerManager = TimerManager()
+        self.timerManager = TimerManagerMock()
         self.viewModel = BerlinClockViewModel(clockEngine: clockEngine, timerManager: timerManager)
     }
 
@@ -50,5 +50,45 @@ final class BerlinClockViewModelTests: XCTestCase {
         }
     }
 
+    func test_berlinClock_tickingOneSecond_expectedResult() {
+        let expectation = expectation(description: "Waiting for  BerlinClock to tick to the next second")
+
+        let cancellable = viewModel.berlinClockPublisher
+            .dropFirst() // We don't want to verify the initial value
+            .sink { clock in
+
+            // Verify if the clock is ticking
+            XCTAssert(clock.second.rawValue == "Y") // second goes to 2 seconds, if success it means the clock is ticking
+            XCTAssert(clock.fiveHours.colorsOfTheRow == "OOOO")
+            XCTAssert(clock.hours.colorsOfTheRow == "ROOO")
+            XCTAssert(clock.fiveMinutes.colorsOfTheRow == "OOOOOOOOOOO")
+            XCTAssert(clock.minutes.colorsOfTheRow == "YOOO")
+
+            expectation.fulfill()
+        }
+
+        timerManager.start() // Make the clock ticking
+
+        waitForExpectations(timeout: 10) { error in
+            cancellable.cancel()
+            if let error = error {
+                XCTFail("waitForExpectationsWithTimeout errored: \(error)")
+            }
+        }
+    }
 }
 
+class TimerManagerMock: TimerManagerProtocol {
+    var currentDatePublisher: Published<Date>.Publisher { $currentDate }
+    @Published private var currentDate: Date = Date.createWith(hour: 1,
+                                                               minute: 1,
+                                                               second: 1)
+
+    func start() {
+        currentDate.addOneSecond()
+    }
+
+    func stop() {
+        //
+    }
+}

@@ -25,6 +25,7 @@
 		7FFF07602B3CA15E005E1A28 /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FFF074A2B3C6960005E1A28 /* Date+Extension.swift */; };
 		7FFF07662B3CA1E9005E1A28 /* BerlinClockViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FFF07652B3CA1E9005E1A28 /* BerlinClockViewModelTests.swift */; };
 		7FFF07692B3CA39D005E1A28 /* TimerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FFF07682B3CA39D005E1A28 /* TimerManager.swift */; };
+		7FFF076B2B3CAAFA005E1A28 /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FFF076A2B3CAAFA005E1A28 /* Date+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +67,7 @@
 		7FFF075E2B3CA0B3005E1A28 /* BerlinClockViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BerlinClockViewModel.swift; sourceTree = "<group>"; };
 		7FFF07652B3CA1E9005E1A28 /* BerlinClockViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BerlinClockViewModelTests.swift; sourceTree = "<group>"; };
 		7FFF07682B3CA39D005E1A28 /* TimerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerManager.swift; sourceTree = "<group>"; };
+		7FFF076A2B3CAAFA005E1A28 /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -168,6 +170,7 @@
 			isa = PBXGroup;
 			children = (
 				7FFF07592B3C821E005E1A28 /* Array+Extension.swift */,
+				7FFF076A2B3CAAFA005E1A28 /* Date+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -379,6 +382,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7FFF076B2B3CAAFA005E1A28 /* Date+Extension.swift in Sources */,
 				7FFF072C2B3C6618005E1A28 /* LightStateUseCaseTests.swift in Sources */,
 				7FFF07662B3CA1E9005E1A28 /* BerlinClockViewModelTests.swift in Sources */,
 				7FFF07582B3C7E29005E1A28 /* BerlinClockEngineTests.swift in Sources */,
