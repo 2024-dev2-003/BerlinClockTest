@@ -21,6 +21,13 @@ public class LightStateUseCase: LightStateUseCaseProtocol {
     }
 
     public func fiveHoursRowStates(from date: Date) -> [Bool] {
-        []
+        generateStates(for: 4, isOnTotal: calendar.hours(of: date) / 5)
     }
+
+    // Utils
+
+    private func generateStates(for numberOfLights: Int, isOnTotal: Int) -> [Bool] {
+        Array(repeating: true, count: isOnTotal) + Array(repeating: false, count: numberOfLights - isOnTotal)
+    }
+
 }
