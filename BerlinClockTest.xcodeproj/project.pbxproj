@@ -14,6 +14,8 @@
 		7FFF072C2B3C6618005E1A28 /* BerlinClockTestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FFF072B2B3C6618005E1A28 /* BerlinClockTestTests.swift */; };
 		7FFF07362B3C6618005E1A28 /* BerlinClockTestUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FFF07352B3C6618005E1A28 /* BerlinClockTestUITests.swift */; };
 		7FFF07382B3C6618005E1A28 /* BerlinClockTestUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FFF07372B3C6618005E1A28 /* BerlinClockTestUITestsLaunchTests.swift */; };
+		7FFF07482B3C68FA005E1A28 /* LightStateUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FFF07472B3C68FA005E1A28 /* LightStateUseCase.swift */; };
+		7FFF074B2B3C6960005E1A28 /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FFF074A2B3C6960005E1A28 /* Date+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +46,8 @@
 		7FFF07312B3C6618005E1A28 /* BerlinClockTestUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BerlinClockTestUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7FFF07352B3C6618005E1A28 /* BerlinClockTestUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BerlinClockTestUITests.swift; sourceTree = "<group>"; };
 		7FFF07372B3C6618005E1A28 /* BerlinClockTestUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BerlinClockTestUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		7FFF07472B3C68FA005E1A28 /* LightStateUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LightStateUseCase.swift; sourceTree = "<group>"; };
+		7FFF074A2B3C6960005E1A28 /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +98,7 @@
 		7FFF07192B3C6616005E1A28 /* BerlinClockTest */ = {
 			isa = PBXGroup;
 			children = (
+				7FFF07462B3C68DD005E1A28 /* UseCase */,
 				7FFF071A2B3C6616005E1A28 /* BerlinClockTestApp.swift */,
 				7FFF071C2B3C6616005E1A28 /* ContentView.swift */,
 				7FFF071E2B3C6618005E1A28 /* Assets.xcassets */,
@@ -113,6 +118,7 @@
 		7FFF072A2B3C6618005E1A28 /* BerlinClockTestTests */ = {
 			isa = PBXGroup;
 			children = (
+				7FFF07492B3C6951005E1A28 /* Extensions */,
 				7FFF072B2B3C6618005E1A28 /* BerlinClockTestTests.swift */,
 			);
 			path = BerlinClockTestTests;
@@ -125,6 +131,22 @@
 				7FFF07372B3C6618005E1A28 /* BerlinClockTestUITestsLaunchTests.swift */,
 			);
 			path = BerlinClockTestUITests;
+			sourceTree = "<group>";
+		};
+		7FFF07462B3C68DD005E1A28 /* UseCase */ = {
+			isa = PBXGroup;
+			children = (
+				7FFF07472B3C68FA005E1A28 /* LightStateUseCase.swift */,
+			);
+			path = UseCase;
+			sourceTree = "<group>";
+		};
+		7FFF07492B3C6951005E1A28 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				7FFF074A2B3C6960005E1A28 /* Date+Extension.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -258,6 +280,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7FFF071D2B3C6616005E1A28 /* ContentView.swift in Sources */,
+				7FFF07482B3C68FA005E1A28 /* LightStateUseCase.swift in Sources */,
 				7FFF071B2B3C6616005E1A28 /* BerlinClockTestApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -267,6 +290,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7FFF072C2B3C6618005E1A28 /* BerlinClockTestTests.swift in Sources */,
+				7FFF074B2B3C6960005E1A28 /* Date+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
