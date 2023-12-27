@@ -25,7 +25,7 @@ public class BerlinClockEngine: BerlinClockEngineProtocol {
                     hours: hourLamps(with: useCase.oneHourRowStates(from: date)),
                     fiveMinutes: minuteLamps(with: useCase.fiveMinutesRowStates(from: date),
                                              withVisualMarkAtInterval: 3),
-                    minutes: [])
+                    minutes: minuteLamps(with: useCase.oneMinuteRowStates(from: date)))
     }
 
     private func secondLamp(with date: Date) -> Lamp {
