@@ -12,6 +12,8 @@ final class BerlinClockEngineTests: XCTestCase {
 
     private let clockEngine: BerlinClockEngineProtocol = BerlinClockEngine(useCase: LightStateUseCase())
 
+    // Second lamp
+
     func test_oneSecondLamp_expectedResult() {
 
         // odd
@@ -32,7 +34,7 @@ final class BerlinClockEngineTests: XCTestCase {
 
     // Five hours row
 
-    func test_fiveHoursRowLight_expectedResult() {
+    func test_fiveHoursRowLamp_expectedResult() {
         checkFiveHoursSatisfy(with: 0...4, expectedResult: "OOOO")
         checkFiveHoursSatisfy(with: 5...9, expectedResult: "ROOO")
         checkFiveHoursSatisfy(with: 10...14, expectedResult: "RROO")
@@ -45,4 +47,18 @@ final class BerlinClockEngineTests: XCTestCase {
         XCTAssert(results.allSatisfy { $0 == expectedResult })
     }
 
+    // Hour row
+
+    func test_oneHourLamp_expectedResult() {
+        checkOneHourSatisfy(with: [0, 5, 10, 15, 20], expectedResult: "OOOO")
+        checkOneHourSatisfy(with: [1, 6, 11, 16, 21], expectedResult: "ROOO")
+        checkOneHourSatisfy(with: [2, 7, 12, 17, 22], expectedResult: "RROO")
+        checkOneHourSatisfy(with: [3, 8, 13, 18, 23], expectedResult: "RRRO")
+        checkOneHourSatisfy(with: [4, 9, 14, 19], expectedResult: "RRRR")
+    }
+
+    func checkOneHourSatisfy(with hours: [Int], expectedResult: String) {
+        let results = hours.map { clockEngine.clock(for: Date.createWith(hour: $0)).hours.colorsOfTheRow }
+        XCTAssert(results.allSatisfy { $0 == expectedResult })
+    }
 }
