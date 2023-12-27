@@ -11,8 +11,15 @@ import SwiftUI
 struct BerlinClockTestApp: App {
     var body: some Scene {
         WindowGroup {
-            BerlinClockView(borderColor: .black,
-                            borderWidth: 4)
+            BerlinClockView(
+                // ViewModel is hardcoded here but it could come from factory
+                // or dependency injection
+                viewModel: BerlinClockViewModel(
+                    clockEngine: BerlinClockEngine(useCase: LightStateUseCase()),
+                    timerManager: TimerManager()
+                ),
+                borderColor: .black,
+                borderWidth: 4)
         }
     }
 }

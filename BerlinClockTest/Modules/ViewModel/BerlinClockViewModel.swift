@@ -8,7 +8,7 @@
 import Combine
 import Foundation
 
-public protocol BerlinClockViewModelProtocol {
+public protocol BerlinClockViewModelProtocol: ObservableObject {
     var berlinClockPublisher: Published<BerlinClock>.Publisher { get }
 
     func startTimer()

@@ -7,53 +7,76 @@
 
 import SwiftUI
 
-struct BerlinClockView: View {
+struct BerlinClockView<T: BerlinClockViewModelProtocol>: View {
 
+    @ObservedObject public var viewModel: T
     public let borderColor: Color
     public let borderWidth: Int
+
+    @State private var secondLamp: Lamp = .off
+    @State private var fiveHoursLamp: [Lamp] = Array(repeating: .off, count: 4)
+    @State private var hoursLamp: [Lamp] = Array(repeating: .off, count: 4)
+    @State private var fiveMinutesLamp: [Lamp] = Array(repeating: .off, count: 11)
+    @State private var minutesLamp: [Lamp] = Array(repeating: .off, count: 4)
 
     var body: some View {
         VStack {
             // Second
-            SecondLampView(color: .yellow,
+            SecondLampView(lamp: secondLamp,
                            borderColor: borderColor,
                            borderWidth: borderWidth)
             .frame(width: 130, height: 130)
 
             // 5hours
 
-            HourMinuteRowView(colors: [.red, .red, .red, .red],
+            HourMinuteRowView(lamps: fiveHoursLamp,
                               borderColor: borderColor,
                               borderWidth: borderWidth)
             .frame(height: 75)
 
             // hour
 
-            HourMinuteRowView(colors: [.red, .red, .red, .red],
+            HourMinuteRowView(lamps: hoursLamp,
                               borderColor: borderColor,
                               borderWidth: borderWidth)
             .frame(height: 75)
 
             // 5minutes
 
-            HourMinuteRowView(colors: [.yellow, .yellow, .yellow, .yellow, .yellow, .yellow, .yellow, .yellow, .yellow, .yellow, .yellow],
+            HourMinuteRowView(lamps: fiveMinutesLamp,
                               borderColor: borderColor,
                               borderWidth: borderWidth)
             .frame(height: 75)
 
             // minutes
 
-            HourMinuteRowView(colors: [.yellow, .yellow, .yellow, .yellow],
+            HourMinuteRowView(lamps: minutesLamp,
                               borderColor: borderColor,
                               borderWidth: borderWidth)
             .frame(height: 75)
         }
         .padding()
+        .onReceive(viewModel.berlinClockPublisher) { berlinClock in
+            secondLamp = berlinClock.second
+            fiveHoursLamp = berlinClock.fiveHours
+            hoursLamp = berlinClock.hours
+            fiveMinutesLamp = berlinClock.fiveMinutes
+            minutesLamp = berlinClock.minutes
+        }
+        .onAppear(perform: {
+            viewModel.startTimer()
+        })
+        .onDisappear(perform: {
+            viewModel.stopTimer()
+        })
+
     }
 }
 
 #Preview {
-    BerlinClockView(borderColor: .black,
+    BerlinClockView(viewModel: BerlinClockViewModel(clockEngine: BerlinClockEngine(useCase: LightStateUseCase()),
+                                                    timerManager: TimerManager()),
+                    borderColor: .black,
                     borderWidth: 4)
 
 }

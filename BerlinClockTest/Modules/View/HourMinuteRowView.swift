@@ -9,14 +9,14 @@ import SwiftUI
 
 struct HourMinuteRowView: View {
 
-    let colors: [Color]
+    let lamps: [Lamp]
     let borderColor: Color
     let borderWidth: Int
 
     var body: some View {
         HStack {
-            ForEach(colors, id: \.self) { color in
-                HourMinuteView(color: color,
+            ForEach(Array(lamps.enumerated()), id: \.offset) { _, lamp in
+                HourMinuteView(lamp: lamp,
                                borderColor: borderColor,
                                borderWidth: borderWidth)
             }
@@ -25,9 +25,9 @@ struct HourMinuteRowView: View {
 }
 
 #Preview {
-    HourMinuteRowView(colors: [.yellow, .yellow, .yellow, .yellow],
-                   borderColor: .black,
-                   borderWidth: 4)
+    HourMinuteRowView(lamps: [.yellow, .yellow, .yellow, .yellow],
+                      borderColor: .black,
+                      borderWidth: 4)
     .frame(height: 150)
     .padding()
 }

@@ -9,19 +9,19 @@ import SwiftUI
 
 struct HourMinuteView: View {
 
-    let color: Color
+    let lamp: Lamp
     let borderColor: Color
     let borderWidth: Int
 
     var body: some View {
         Rectangle()
             .strokeBorder(borderColor, lineWidth: 4)
-            .background(Rectangle().fill(color))
+            .background(Rectangle().fill(lamp.color))
     }
 }
 
 #Preview {
-    HourMinuteView(color: .yellow,
+    HourMinuteView(lamp: .yellow,
                    borderColor: .black,
                    borderWidth: 4)
     .frame(width: 100, height: 200)

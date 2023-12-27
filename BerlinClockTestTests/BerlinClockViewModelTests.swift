@@ -11,7 +11,7 @@ import XCTest
 
 final class BerlinClockViewModelTests: XCTestCase {
 
-    var viewModel: BerlinClockViewModelProtocol!
+    var viewModel: BerlinClockViewModel!
     var timerManager: TimerManagerProtocol!
 
     var clockEngine: BerlinClockEngineProtocol = BerlinClockEngine(useCase: LightStateUseCase())

@@ -9,19 +9,19 @@ import SwiftUI
 
 struct SecondLampView: View {
 
-    let color: Color
+    let lamp: Lamp
     let borderColor: Color
     let borderWidth: Int
 
     var body: some View {
         Circle()
             .strokeBorder(borderColor, lineWidth: 4)
-            .background(Circle().fill(color))
+            .background(Circle().fill(lamp.color))
     }
 }
 
 #Preview {
-    SecondLampView(color: .yellow,
+    SecondLampView(lamp: .yellow,
                    borderColor: .black,
                    borderWidth: 4)
     .padding()
