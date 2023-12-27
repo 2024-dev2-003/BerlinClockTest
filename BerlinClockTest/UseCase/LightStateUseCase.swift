@@ -9,6 +9,7 @@ import Foundation
 
 public protocol LightStateUseCaseProtocol {
     func secondState(from date: Date) -> Bool
+    func fiveHoursRowStates(from date: Date) -> [Bool]
 }
 
 public class LightStateUseCase: LightStateUseCaseProtocol {
@@ -17,5 +18,9 @@ public class LightStateUseCase: LightStateUseCaseProtocol {
 
     public func secondState(from date: Date) -> Bool {
         calendar.seconds(of: date) % 2 == 0
+    }
+
+    public func fiveHoursRowStates(from date: Date) -> [Bool] {
+        []
     }
 }

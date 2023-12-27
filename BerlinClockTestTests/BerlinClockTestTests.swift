@@ -12,6 +12,8 @@ final class LightStateUseCaseTests: XCTestCase {
 
     private let useCase: LightStateUseCaseProtocol = LightStateUseCase()
 
+    // Second light
+
     func test_oneSecondLight_expectedResult() {
 
         // odd
@@ -25,5 +27,25 @@ final class LightStateUseCaseTests: XCTestCase {
         XCTAssertTrue(useCase.secondState(from: Date.createWith(second: 2)))
     }
 
+    // Five hours row
+
+    func test_fiveHoursRowLight_expectedResult() {
+        checkFiveHoursSatisfy(with: 0...4, expectedResult: generateExpectedResult(numberLights: 4, totalLightsOn: 0))
+        checkFiveHoursSatisfy(with: 5...9, expectedResult: generateExpectedResult(numberLights: 4, totalLightsOn: 1))
+        checkFiveHoursSatisfy(with: 10...14, expectedResult: generateExpectedResult(numberLights: 4, totalLightsOn: 2))
+        checkFiveHoursSatisfy(with: 15...19, expectedResult: generateExpectedResult(numberLights: 4, totalLightsOn: 3))
+        checkFiveHoursSatisfy(with: 20...23, expectedResult: generateExpectedResult(numberLights: 4, totalLightsOn: 4))
+    }
+
+    func checkFiveHoursSatisfy(with hours: ClosedRange<Int>, expectedResult: [Bool]) {
+        let results = hours.map { useCase.fiveHoursRowStates(from: Date.createWith(hour: $0)) }
+        XCTAssert(results.allSatisfy { $0 == expectedResult })
+    }
+
+    // Utils
+
+    func generateExpectedResult(numberLights: Int, totalLightsOn: Int) -> [Bool] {
+        Array(repeating: true, count: totalLightsOn) + Array(repeating: false, count: numberLights - totalLightsOn)
+    }
 }
 
