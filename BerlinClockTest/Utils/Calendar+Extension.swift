@@ -12,6 +12,10 @@ public extension Calendar {
         component(.second, from: date)
     }
 
+    func minutes(of date: Date) -> Int {
+        component(.minute, from: date)
+    }
+
     func hours(of date: Date) -> Int {
         component(.hour, from: date)
     }

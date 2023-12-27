@@ -31,7 +31,7 @@ public class LightStateUseCase: LightStateUseCaseProtocol {
     }
 
     public func fiveMinutesRowStates(from date: Date) -> [Bool] {
-        []
+        generateStates(for: 11, isOnTotal: calendar.minutes(of: date) / 5)
     }
 
     // Utils
