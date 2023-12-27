@@ -1,6 +1,6 @@
 //
 //  Date+Extension.swift
-//  BerlinClockTestTests
+//  BerlinClockTest
 //
 //  Created by 2024-dev2-003 on 27/12/2023.
 //
@@ -16,6 +16,6 @@ public extension Date {
         calendar.date(bySettingHour: hour,
                       minute: minute,
                       second: second,
-                      of: Date())!
+                      of: Date()) ?? Date()
     }
 }
