@@ -28,6 +28,8 @@
 		7FFF076B2B3CAAFA005E1A28 /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FFF076A2B3CAAFA005E1A28 /* Date+Extension.swift */; };
 		7FFF076E2B3CC696005E1A28 /* TimeManagerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FFF076D2B3CC696005E1A28 /* TimeManagerMock.swift */; };
 		7FFF07702B3CC791005E1A28 /* SecondLampView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FFF076F2B3CC791005E1A28 /* SecondLampView.swift */; };
+		7FFF07722B3CC98D005E1A28 /* HourMinuteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FFF07712B3CC98D005E1A28 /* HourMinuteView.swift */; };
+		7FFF07742B3CC9BB005E1A28 /* HourMinuteRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FFF07732B3CC9BB005E1A28 /* HourMinuteRowView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +74,8 @@
 		7FFF076A2B3CAAFA005E1A28 /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
 		7FFF076D2B3CC696005E1A28 /* TimeManagerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeManagerMock.swift; sourceTree = "<group>"; };
 		7FFF076F2B3CC791005E1A28 /* SecondLampView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondLampView.swift; sourceTree = "<group>"; };
+		7FFF07712B3CC98D005E1A28 /* HourMinuteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourMinuteView.swift; sourceTree = "<group>"; };
+		7FFF07732B3CC9BB005E1A28 /* HourMinuteRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourMinuteRowView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -221,6 +225,8 @@
 			children = (
 				7FFF071C2B3C6616005E1A28 /* BerlinClockView.swift */,
 				7FFF076F2B3CC791005E1A28 /* SecondLampView.swift */,
+				7FFF07712B3CC98D005E1A28 /* HourMinuteView.swift */,
+				7FFF07732B3CC9BB005E1A28 /* HourMinuteRowView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -380,6 +386,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7FFF07522B3C7DA5005E1A28 /* Lamp.swift in Sources */,
+				7FFF07742B3CC9BB005E1A28 /* HourMinuteRowView.swift in Sources */,
 				7FFF07702B3CC791005E1A28 /* SecondLampView.swift in Sources */,
 				7FFF07692B3CA39D005E1A28 /* TimerManager.swift in Sources */,
 				7FFF075F2B3CA0B3005E1A28 /* BerlinClockViewModel.swift in Sources */,
@@ -389,6 +396,7 @@
 				7FFF07482B3C68FA005E1A28 /* LightStateUseCase.swift in Sources */,
 				7FFF071B2B3C6616005E1A28 /* BerlinClockTestApp.swift in Sources */,
 				7FFF07562B3C7DDA005E1A28 /* BerlinClockEngine.swift in Sources */,
+				7FFF07722B3CC98D005E1A28 /* HourMinuteView.swift in Sources */,
 				7FFF07602B3CA15E005E1A28 /* Date+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

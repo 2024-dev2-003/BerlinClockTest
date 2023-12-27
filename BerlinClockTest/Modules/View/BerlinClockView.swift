@@ -18,12 +18,21 @@ struct BerlinClockView: View {
             SecondLampView(color: .yellow,
                            borderColor: borderColor,
                            borderWidth: borderWidth)
-            .frame(width: 150, height: 150)
-
+            .frame(width: 130, height: 130)
 
             // 5hours
 
+            HourMinuteRowView(colors: [.red, .red, .red, .red],
+                              borderColor: borderColor,
+                              borderWidth: borderWidth)
+            .frame(height: 75)
+
             // hour
+
+            HourMinuteRowView(colors: [.red, .red, .red, .red],
+                              borderColor: borderColor,
+                              borderWidth: borderWidth)
+            .frame(height: 75)
 
             // 5minutes
 
