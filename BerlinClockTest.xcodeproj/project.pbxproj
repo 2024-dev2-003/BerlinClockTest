@@ -26,6 +26,7 @@
 		7FFF07662B3CA1E9005E1A28 /* BerlinClockViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FFF07652B3CA1E9005E1A28 /* BerlinClockViewModelTests.swift */; };
 		7FFF07692B3CA39D005E1A28 /* TimerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FFF07682B3CA39D005E1A28 /* TimerManager.swift */; };
 		7FFF076B2B3CAAFA005E1A28 /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FFF076A2B3CAAFA005E1A28 /* Date+Extension.swift */; };
+		7FFF076E2B3CC696005E1A28 /* TimeManagerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FFF076D2B3CC696005E1A28 /* TimeManagerMock.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +69,7 @@
 		7FFF07652B3CA1E9005E1A28 /* BerlinClockViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BerlinClockViewModelTests.swift; sourceTree = "<group>"; };
 		7FFF07682B3CA39D005E1A28 /* TimerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerManager.swift; sourceTree = "<group>"; };
 		7FFF076A2B3CAAFA005E1A28 /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
+		7FFF076D2B3CC696005E1A28 /* TimeManagerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeManagerMock.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,6 +143,7 @@
 		7FFF072A2B3C6618005E1A28 /* BerlinClockTestTests */ = {
 			isa = PBXGroup;
 			children = (
+				7FFF076C2B3CC683005E1A28 /* Mocks */,
 				7FFF07492B3C6951005E1A28 /* Extensions */,
 				7FFF072B2B3C6618005E1A28 /* LightStateUseCaseTests.swift */,
 				7FFF07572B3C7E29005E1A28 /* BerlinClockEngineTests.swift */,
@@ -233,6 +236,14 @@
 				7FFF07682B3CA39D005E1A28 /* TimerManager.swift */,
 			);
 			path = Manager;
+			sourceTree = "<group>";
+		};
+		7FFF076C2B3CC683005E1A28 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				7FFF076D2B3CC696005E1A28 /* TimeManagerMock.swift */,
+			);
+			path = Mocks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -386,6 +397,7 @@
 				7FFF072C2B3C6618005E1A28 /* LightStateUseCaseTests.swift in Sources */,
 				7FFF07662B3CA1E9005E1A28 /* BerlinClockViewModelTests.swift in Sources */,
 				7FFF07582B3C7E29005E1A28 /* BerlinClockEngineTests.swift in Sources */,
+				7FFF076E2B3CC696005E1A28 /* TimeManagerMock.swift in Sources */,
 				7FFF075A2B3C821E005E1A28 /* Array+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

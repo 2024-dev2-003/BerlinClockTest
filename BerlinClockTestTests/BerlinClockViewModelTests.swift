@@ -79,18 +79,3 @@ final class BerlinClockViewModelTests: XCTestCase {
         }
     }
 }
-
-class TimerManagerMock: TimerManagerProtocol {
-    var currentDatePublisher: Published<Date>.Publisher { $currentDate }
-    @Published private var currentDate: Date = Date.createWith(hour: 1,
-                                                               minute: 1,
-                                                               second: 1)
-
-    func start() {
-        currentDate.addOneSecond()
-    }
-
-    func stop() {
-        //
-    }
-}
