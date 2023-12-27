@@ -20,19 +20,11 @@ public class BerlinClockViewModel: BerlinClockViewModelProtocol {
     private let clockEngine: BerlinClockEngineProtocol
     private let timerManager: TimerManagerProtocol
 
-    private var cancellables = Set<AnyCancellable>()
-
-    public func startTimer() {
-        timerManager.start()
-    }
-
-    public func stopTimer() {
-        timerManager.stop()
-    }
-
     // Publisher
     @Published private var berlinClock: BerlinClock
     public var berlinClockPublisher: Published<BerlinClock>.Publisher { $berlinClock }
+
+    private var cancellables = Set<AnyCancellable>()
 
     public init(clockEngine: BerlinClockEngineProtocol, timerManager: TimerManagerProtocol) {
         self.clockEngine = clockEngine
@@ -42,13 +34,26 @@ public class BerlinClockViewModel: BerlinClockViewModelProtocol {
                                                                   minute: 0,
                                                                   second: 1))
 
+        listenTimer()
+    }
+
+    public func startTimer() {
+        timerManager.start()
+    }
+
+    public func stopTimer() {
+        timerManager.stop()
+    }
+
+    private func listenTimer() {
         timerManager.currentDatePublisher
-            .sink { date in
-                // Refresh
+            .dropFirst() // We don't want to trigger the initial value until timer start
+            .sink { [weak self] date in
+                guard let self else { return }
+                self.berlinClock = self.clockEngine.clock(for: date)
             }
             .store(in: &cancellables)
     }
-
 
 }
 

@@ -30,7 +30,9 @@ final class BerlinClockViewModelTests: XCTestCase {
     func test_berlinClock_initialState_expectedResult() {
         let expectation = expectation(description: "Waiting for initial BerlinClock value to publish")
 
-        let cancellable = viewModel.berlinClockPublisher.sink { clock in
+        let cancellable = viewModel.berlinClockPublisher
+            .first() // We want to verify only the initial value
+            .sink { clock in
 
             // Verify if the clock is off at beginning
             XCTAssert(clock.second.rawValue == "O")
