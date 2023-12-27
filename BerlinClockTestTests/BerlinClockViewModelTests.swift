@@ -12,12 +12,14 @@ import XCTest
 final class BerlinClockViewModelTests: XCTestCase {
 
     var viewModel: BerlinClockViewModelProtocol!
+    var timerManager: TimerManagerProtocol!
 
     var clockEngine: BerlinClockEngineProtocol = BerlinClockEngine(useCase: LightStateUseCase())
 
     override func setUp() {
         super.setUp()
-        self.viewModel = BerlinClockViewModel(clockEngine: clockEngine)
+        self.timerManager = TimerManager()
+        self.viewModel = BerlinClockViewModel(clockEngine: clockEngine, timerManager: timerManager)
     }
 
     override func tearDown() {

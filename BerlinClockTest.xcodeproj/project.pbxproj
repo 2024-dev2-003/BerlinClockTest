@@ -24,6 +24,7 @@
 		7FFF075F2B3CA0B3005E1A28 /* BerlinClockViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FFF075E2B3CA0B3005E1A28 /* BerlinClockViewModel.swift */; };
 		7FFF07602B3CA15E005E1A28 /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FFF074A2B3C6960005E1A28 /* Date+Extension.swift */; };
 		7FFF07662B3CA1E9005E1A28 /* BerlinClockViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FFF07652B3CA1E9005E1A28 /* BerlinClockViewModelTests.swift */; };
+		7FFF07692B3CA39D005E1A28 /* TimerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FFF07682B3CA39D005E1A28 /* TimerManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +65,7 @@
 		7FFF07592B3C821E005E1A28 /* Array+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Extension.swift"; sourceTree = "<group>"; };
 		7FFF075E2B3CA0B3005E1A28 /* BerlinClockViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BerlinClockViewModel.swift; sourceTree = "<group>"; };
 		7FFF07652B3CA1E9005E1A28 /* BerlinClockViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BerlinClockViewModelTests.swift; sourceTree = "<group>"; };
+		7FFF07682B3CA39D005E1A28 /* TimerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +116,7 @@
 		7FFF07192B3C6616005E1A28 /* BerlinClockTest */ = {
 			isa = PBXGroup;
 			children = (
+				7FFF07672B3CA38F005E1A28 /* Manager */,
 				7FFF075B2B3C93EE005E1A28 /* Modules */,
 				7FFF074F2B3C7D94005E1A28 /* Engine */,
 				7FFF07462B3C68DD005E1A28 /* UseCase */,
@@ -219,6 +222,14 @@
 				7FFF075E2B3CA0B3005E1A28 /* BerlinClockViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		7FFF07672B3CA38F005E1A28 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				7FFF07682B3CA39D005E1A28 /* TimerManager.swift */,
+			);
+			path = Manager;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -352,6 +363,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7FFF07522B3C7DA5005E1A28 /* Lamp.swift in Sources */,
+				7FFF07692B3CA39D005E1A28 /* TimerManager.swift in Sources */,
 				7FFF075F2B3CA0B3005E1A28 /* BerlinClockViewModel.swift in Sources */,
 				7FFF071D2B3C6616005E1A28 /* BerlinClockView.swift in Sources */,
 				7FFF07542B3C7DBF005E1A28 /* BerlinClock.swift in Sources */,
