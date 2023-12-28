@@ -8,6 +8,9 @@
 import Combine
 import Foundation
 
+/// This viewModel is used for business logic of the main view BerlinClockView.
+/// The view can listen the BerlinClock object publisher to be notified when it needs to be refreshed.
+/// Also, we can start and stop the timer that is ticking.
 public protocol BerlinClockViewModelProtocol: ObservableObject {
     var berlinClockPublisher: Published<BerlinClock>.Publisher { get }
 

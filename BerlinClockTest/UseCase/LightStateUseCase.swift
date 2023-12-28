@@ -7,6 +7,8 @@
 
 import Foundation
 
+/// This UseCase will return all the states of each light.
+/// If it should be illuminated, it will return true, if not false.
 public protocol LightStateUseCaseProtocol {
     func secondState(from date: Date) -> Bool
     func fiveHoursRowStates(from date: Date) -> [Bool]

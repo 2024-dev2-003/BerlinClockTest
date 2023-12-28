@@ -8,6 +8,8 @@
 import Combine
 import Foundation
 
+/// Simple timer that notifies us each second of the new actual date.
+/// Also we can start and stop the timer that is ticking.
 public protocol TimerManagerProtocol {
     var currentDatePublisher: Published<Date>.Publisher { get }
 

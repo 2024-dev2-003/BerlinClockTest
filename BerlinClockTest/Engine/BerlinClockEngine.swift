@@ -7,6 +7,8 @@
 
 import Foundation
 
+/// This Engine generates us a BerlinClock object each time we provide a date.
+/// It can also generate a clock that is completely off.
 public protocol BerlinClockEngineProtocol {
     var clockOff: BerlinClock { get }
 
