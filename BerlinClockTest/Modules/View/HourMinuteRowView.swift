@@ -26,7 +26,7 @@ struct HourMinuteRowView: View {
 
 #Preview {
     HourMinuteRowView(lamps: [.yellow, .yellow, .yellow, .yellow],
-                      borderColor: .black,
+                      borderColor: Color.border,
                       borderWidth: 4)
     .frame(height: 150)
     .padding()

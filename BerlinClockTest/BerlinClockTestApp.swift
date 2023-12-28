@@ -18,7 +18,7 @@ struct BerlinClockTestApp: App {
                     clockEngine: BerlinClockEngine(useCase: LightStateUseCase()),
                     timerManager: TimerManager()
                 ),
-                borderColor: .black,
+                borderColor: Color.border,
                 borderWidth: 4)
         }
     }

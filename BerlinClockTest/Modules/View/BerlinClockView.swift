@@ -88,7 +88,7 @@ struct BerlinClockView<T: BerlinClockViewModelProtocol>: View {
 #Preview {
     BerlinClockView(viewModel: BerlinClockViewModel(clockEngine: BerlinClockEngine(useCase: LightStateUseCase()),
                                                     timerManager: TimerManager()),
-                    borderColor: .black,
+                    borderColor: Color.border,
                     borderWidth: 4)
 
 }

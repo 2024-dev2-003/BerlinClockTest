@@ -21,6 +21,7 @@ The final two rows represent the minutes. The upper row represents 5 minute bloc
 - The architecture used in this project is MVVM in order to separate display and business logics.
 - The UI has been made with SwiftUI and Combine has been used to observe change when the timer is ticking.
 - TDD was used during the development, writing tests that fail before writing business code.
+- Support Dark Mode
 
 
 ## Useful links

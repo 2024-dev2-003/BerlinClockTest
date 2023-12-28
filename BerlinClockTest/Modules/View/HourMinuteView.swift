@@ -22,7 +22,7 @@ struct HourMinuteView: View {
 
 #Preview {
     HourMinuteView(lamp: .yellow,
-                   borderColor: .black,
+                   borderColor: Color.border,
                    borderWidth: 4)
     .frame(width: 100, height: 200)
 }

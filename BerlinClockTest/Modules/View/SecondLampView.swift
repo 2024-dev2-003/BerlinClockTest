@@ -22,7 +22,7 @@ struct SecondLampView: View {
 
 #Preview {
     SecondLampView(lamp: .yellow,
-                   borderColor: .black,
+                   borderColor: Color.border,
                    borderWidth: 4)
     .padding()
 }
